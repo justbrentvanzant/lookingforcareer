@@ -11,15 +11,57 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+
+
 //holds references to careers
 var careerList = new Array();
 var validObjs =  new Array();
+var curTags = new Array(); 
+var resultList = new Array(); 
+
+//handle general state
+var isCareerType = true; 
+	var handleToggle = function(type) {
+		if (type == 0) {
+			if (isCareerType != true) {
+				hideDetails(); 
+				isCareerType = true; 
+				$("#typeText").empty();
+				$("#typeText").append("Careers");
+				resultList = new Array(); 
+				$("#responseList").empty();
+				//TODO USE CURRENT TAGS
+				resultList = scanCareers(curTags,careerList);
+				listUpdate();
+				hideDetails();
+			}
+		}
+		else {
+			if (isCareerType != false) {
+				hideDetails(); 
+				isCareerType = false; 
+				$("#typeText").empty();
+				$("#typeText").append("Internships");
+				resultList = new Array();
+				$("#responseList").empty();
+				//TODO USE CURRENT TAGS
+			}	
+		}
+	}
+
 //serves as an object constructor 
 function Career(tags, description, source,name) {
   this.myTags = tags;
   this.myDescription = description;
   this.sourceDescription = source;
   this.myName = name; 
+}
+
+var listUpdate = function(){
+     $("#responseList").empty();
+        for (var i = 0; i < resultList.length; i++) {
+           $("#responseList").append('<tr><td> <a href="#objectInfo" class="tdLeft" onclick="showDetails('+ i + ')">' + resultList[i].myName + '</a></td>' + '<td><a class="tdRight" href="'+ resultList[i].sourceDescription +'">'+ "Resource</a></td>" + '</tr>');
+         }
 }
 
 //transforms string of tags into array of tags
@@ -68,8 +110,23 @@ var scanCareers = function(listDesired, listObjects) {
 				resultant.push(listObjects[i]);	
 			}
 	}
+	hideDetails();
 	return resultant;
 }
+//shows details by editing html properties of content of details divs
 var showDetails = function(indexNum){
-        console.log(indexNum);
- }
+	$("#curTitle").empty();
+	$("#curTitle").append(resultList[indexNum].myName);
+	$("#curContent").empty();
+	$("#curContent").append(resultList[indexNum].myDescription);
+	$("#toggleDiv").removeClass("hiddenEle");
+	$("#toggleDiv").addClass("visableEle");
+}
+//clears details by editing html properties of content of details divs and hiding the div
+var hideDetails = function(){
+	$("#curTitle").empty();
+	$("#curContent").empty();
+	$("#toggleDiv").removeClass("visableEle");
+	$("#toggleDiv").addClass("hiddenEle");
+}
+
