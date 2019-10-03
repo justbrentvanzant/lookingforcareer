@@ -26,8 +26,8 @@
 <div id="menu-wrapper">
 		<div id="menu">
 			<ul>
-				<li class="current_page_item toggleOne"><a>Career Search</a></li>
-				<li class="current_page_item toggleOne"><a>Internship Search</a></li>
+				<li onclick="handleToggle(0)" class="current_page_item"><a >Career Search</a></li>
+				<li onclick="handleToggle(1)" class="current_page_item"><a>Internship Search</a></li>
 				<li class="current_page_item"><a href="https://www.gameindustrycareerguide.com/about/start-your-career-in-video-game-development/" accesskey="1" title="">Guides</a></li>
 				<li><a href="https://www.gamecareerguide.com/getting_started/" accesskey="2" title="">More Guides</a></li>
 				<li><a href="https://www.gamecareerguide.com/getting_started/" accesskey="3" title="">Gaming Industry News</a></li>
@@ -40,7 +40,7 @@
 		<div class="extra2 container">
 			<div class="ebox1">
 				<div class="title">
-					<h2>Search by Interest Tag!</h2>
+					<h2>Search <span id="typeText">Careers</span> by Interest Tag!</h2>
 					<span class="byline">Enter tags into the search bar and see what comes up</span><br>
 					<span class="byline">Examples: (Art, Coding, Photoshop, Accounting, Leadership)</span>
 				</div>
@@ -52,10 +52,13 @@
 					
 						<table style="width:100%" id= "responseList">
 						</table>
-			
+					<div id="toggleDiv" class ="hiddenEle">
+					<h3 id="objectInfo" >What is a <span class="bolding" id ="curTitle"></span>?</h3>
+					<p id="curContent"></p>
 				</div>
 				
 			</div>
+		
 
 			
 
