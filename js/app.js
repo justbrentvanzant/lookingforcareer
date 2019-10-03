@@ -1,8 +1,8 @@
 (function() {
     
-    var interestTags = ['art','consulting','animation','3D','modelling','fx','photoshop','maya','unity', 'unreal', 'cg', 'video editing'];
-    var curTags = new Array(); 
-    var resultList = new Array(); 
+	
+    var interestTags = ['art','coding','design','game-mechanics','gaming','esports','data analytics','product management','finance', 'consulting', 'animation', 'video editing','3d','2d','modelling','fx','photoshop','maya','unity','unreal','cg','social','hr','tech','it','languages','esports','film'];
+
     window.searchBar = new Taggle($('.searchBar.textarea')[0], {
         duplicateTagClass: 'bounce',
         onTagAdd: function(event, tag) {
@@ -29,6 +29,15 @@
         }
     });
 
+	    //handles the logical addition of tag to results data structure
+	var handleAdd = function(tagAdded) {
+		var indexNum = getTargIndex(tagAdded);
+		curTags.push(interestTags[indexNum]);  
+		if ( isCareerType ) {
+			resultList = scanCareers(curTags,careerList);
+			listUpdate();
+		}
+	}
 
     var getTargIndex = function(tagAdded) {
         targetTagIndex = 0;
@@ -41,14 +50,6 @@
         return targetTagIndex;
     }
 
-    //handles the logical addition of tag to results data structure
-    var handleAdd = function(tagAdded) {
-        var indexNum = getTargIndex(tagAdded);
-        curTags.push(interestTags[indexNum]);  
-        resultList = scanCareers(curTags,careerList);
-        listUpdate();
-    }
-
     //handles the logical removal of tag to results data structure
     var handleRemove = function(tagAdded) {
         var indexNum = getTargIndex(tagAdded);
@@ -59,23 +60,16 @@
                 i = curTags.length; 
             }
         }
-
-        resultList = scanCareers(curTags,careerList);
-        listUpdate();
+		if ( isCareerType ) {
+			resultList = scanCareers(curTags,careerList);
+			listUpdate();
+			hideDetails();
+		}
     }
 
     //updates list 
-    var listUpdate = function(){
-     $("#responseList").empty();
-        for (var i = 0; i < resultList.length; i++) {
-           $("#responseList").append('<tr><td onclick="showDetails('+ i + ')">' + resultList[i].myName + '</td>' + '<td' </tr>');
-         }
-    }
+    
 
-    //shows details of career
-    var showDetails = function(indexNum){
-        console.log(indexNum);
-    }
-
+	hideDetails();
 }());
 
