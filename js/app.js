@@ -1,7 +1,7 @@
 (function() {
     
 	
-    var interestTags = ['art','coding','design','game-mechanics','gaming','esports','data analytics','product management','finance', 'consulting', 'animation', 'video editing','3d','2d','modelling','fx','photoshop','maya','unity','unreal','cg','social','hr','tech','it','languages','esports','film','writing','communications'];
+    var interestTags = ['art','coding','design','game-mechanics','gaming','esports','data analytics','product management','finance', 'consulting', 'animation', 'video editing','3d','2d','modelling','fx','photoshop','maya','unity','unreal','cg','social','hr','tech','it','languages','esports','film','writing','communications','sound design','music'];
 
     window.searchBar = new Taggle($('.searchBar.textarea')[0], {
         duplicateTagClass: 'bounce',
