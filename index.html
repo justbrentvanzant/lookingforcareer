@@ -1,78 +1,70 @@
-<!DOCTYPE html">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>LFC</title>
-<script src="https://use.fontawesome.com/cc7ad2dbcf.js"></script>
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/taggle.css" rel="stylesheet" type="text/css" media="all" >
- <link href="/css/fontawesome.css" rel="stylesheet" type="text/css" media="all">
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!DOCTYPE HTML>
+<!--
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>LFC, or Looking for Career</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/taggle.css" rel="stylesheet" type="text/css" media="all" >
+	</head>
+	<body>
 
-</head>
-<body class = "container">
-<div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><a href="#">LFC</a></h1>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-			<span><a><b>Looking for Careers</b></a></span><br>
-			<span>Built by <a href="http://brentvanzant.dev" rel="nofollow">Brent VanZant</a> using CSS from <a href="http://templated.co" rel="nofollow">Templated</a></span>
-		</div>
-		<div id="triangle-up"></div>
-	</div>
-</div>
-<div id="menu-wrapper">
-		<div id="menu">
-			<ul>
-				<li onclick="handleToggle(0)" class="current_page_item"><a >Career Search</a></li>
-				<li onclick="handleToggle(1)" class="current_page_item"><a>Internship Search</a></li>
-				<li class="current_page_item"><a href="https://www.gameindustrycareerguide.com/about/start-your-career-in-video-game-development/" accesskey="1" title="">Guides</a></li>
-				<li><a href="https://www.gamecareerguide.com/getting_started/" accesskey="2" title="">More Guides</a></li>
-				<li><a href="https://www.gamecareerguide.com/getting_started/" accesskey="3" title="">Gaming Industry News</a></li>
-			</ul>
-		</div>
-</div>
-<div id="wrapper">
-	<div id="featured-wrapper">
-
-		<div class="extra2 container">
-			<div class="ebox1">
-				<div class="title">
-					<h2>Search <span id="typeText">Careers</span> by Interest Tag!</h2>
-					<span class="byline">Enter tags into the search bar and see what comes up</span><br>
-					<span class="byline">Examples: (Art, Coding, Desing, Photoshop, data analytics, communications, video editing)</span>
-				</div>
-				<div class="input textarea clearfix searchBar"></div>
-				<br>
-				<br>
-				<div class="title">
-					<h2>Results</h2>
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<span class="icon fa-gamepad major"></span>
+						<h2>Looking for Career (LFC)</h2>
+						<p> <span class="byline">Search Gaming Related <span id="typeText">Careers</span> by Interest Tag!</span><br>
+						<span class="byline">Just enter your interests into the search bar :)</span><br>
+						<span class="byline2">Examples: (Art, Coding, Desing, Photoshop, Data Analytics, Communications, Video Editing, and more!)</span><br>
+							<span class="byline2"> Currently 50+ carreers in the database. Internship search feature coming soon!
+							</span> 
+					</p>
+						<div class="input textarea clearfix searchBar"></div>
+						<br>
+						<br>
+						<h2>Results</h2>
 					
 						<table style="width:100%" id= "responseList">
 						</table>
 					<div id="toggleDiv" class ="hiddenEle">
 					<h3 id="objectInfo" >What is a <span class="bolding" id ="curTitle"></span>?</h3>
 					<p id="curContent"></p>
-				</div>
-				
+					</section>
+
+				<!-- Items -->
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/ColdInkStudios1" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/in/brent-vanzant-65580116a/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="justbrentvanzant@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">Made by Brent VanZant. Design: <a href="https://templated.co">TEMPLATED</a>.</p>
+					</footer>
+
 			</div>
-		
 
-			
-
-		</div>
-
-	</div>
-</div>
-<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
-<script src="js/jquery-1.10.1.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/taggle.min.js"></script>
-<script src="js/dataHandle.js"></script>
-<script src="js/app.js"></script>
-</body>
-
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+			<script src="js/jquery-1.10.1.js"></script>
+			<script src="js/jquery-ui.js"></script>
+			<script src="js/taggle.min.js"></script>
+			<script src="js/dataHandle.js"></script>
+			<script src="js/app.js"></script>
+	</body>
 </html>
