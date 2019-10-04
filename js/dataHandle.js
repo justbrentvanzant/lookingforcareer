@@ -58,6 +58,7 @@ function Career(tags, description, source,name) {
 }
 
 var listUpdate = function(){
+	console.log(careerList.length);
      $("#responseList").empty();
         for (var i = 0; i < resultList.length; i++) {
            $("#responseList").append('<tr><td> <a href="#objectInfo" class="tdLeft" onclick="showDetails('+ i + ')">' + resultList[i].myName + '</a></td>' + '<td><a class="tdRight" href="'+ resultList[i].sourceDescription +'">'+ "Resource</a></td>" + '</tr>');
